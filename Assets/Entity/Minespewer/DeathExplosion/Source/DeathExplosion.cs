@@ -1,18 +1,20 @@
+using System.Collections.Generic;
+using UnityEditor.Profiling;
 using UnityEngine;
 
 public class DeathExplosion : MonoBehaviour
 {
-    private SphereCollider sphereCollider;
-    float forceImpulse = 10f;
+    [SerializeField] private float forceImpulse = 100f;
+    private float radius = 0;
 
     void Start()
     {
-        sphereCollider = GetComponent<SphereCollider>();
+        radius = GetComponent<SphereCollider>().radius;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if (other.transform.parent == null || !other.transform.parent.TryGetComponent(out Entity entity))
+        if (other.transform.parent == null || !other.transform.parent.TryGetComponent(out Minespewer entity))
             return;
 
         var rb = entity.GetComponent<Rigidbody>();
@@ -22,8 +24,10 @@ public class DeathExplosion : MonoBehaviour
             return;
         }
 
+        var dist = Vector3.Distance(transform.position, entity.transform.position);
+        var force = Mathf.Clamp01((radius - dist) / radius);
         Vector3 explosionDirection = (entity.transform.position - transform.position).normalized;
-        rb.AddForce(explosionDirection * -forceImpulse, ForceMode.Impulse);
+        rb.AddForce(explosionDirection * -forceImpulse * force * Time.deltaTime);
     }
 
     private void DeleteOnEndAnimation()
