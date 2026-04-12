@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Fade))]
 public class HealthProgress : MonoBehaviour, IFadeableObject
 {
     [SerializeField]
