@@ -17,13 +17,11 @@ public class Shield : MonoBehaviour
     private int maxHealth = 1;
     private int currentHealth = 1;
 
-    private Health health;
-    private Transform camera;
+    private MsHealth health;
 
     void Start()
     {
-        health = GetComponentInParent<Health>();
-        camera = Camera.main.transform;
+        health = GetComponentInParent<MsHealth>();
 
         spriteMaterial = sprite.GetComponentInChildren<Renderer>().material;
         spriteColor = spriteMaterial.color;

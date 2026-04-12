@@ -11,7 +11,7 @@ public class HealthProgress : MonoBehaviour
     private Material borderMaterial;
     private Color progressBaseColor;
     private Color borderBaseColor;
-    private Health playerHealth;
+    private MsHealth playerHealth;
 
     private int maxHealth;
     private int currentHealth;
@@ -31,7 +31,7 @@ public class HealthProgress : MonoBehaviour
 
     void Start()
     {
-        playerHealth = GetComponentInParent<Health>();
+        playerHealth = GetComponentInParent<MsHealth>();
         maxHealth = playerHealth.GetMaxHealth();
         currentHealth = playerHealth.GetHealth();
 

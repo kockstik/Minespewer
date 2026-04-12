@@ -204,6 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a52141f7bdb35e4b923fd4d761dc972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  deathExplosionPrefab: {fileID: 2587419911129840480, guid: eb5a0a156c3299742b567c3e4a5c053c, type: 3}
+  corpsePrefab: {fileID: 6471637958653447970, guid: aa4ccd1e0a0117e4a9ae5bfdecf2226e, type: 3}
   level: 1
   score: 100
   scoreToNextLvl: 0

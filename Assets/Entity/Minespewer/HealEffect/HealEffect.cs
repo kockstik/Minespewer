@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class HealEffect : MonoBehaviour
 {
-    private Health playerHealth;
+    private MsHealth playerHealth;
     private ParticleSystem particles;
 
     private void Start()
     {
-        playerHealth = GetComponentInParent<Health>();
+        playerHealth = GetComponentInParent<MsHealth>();
         particles = GetComponent<ParticleSystem>();
 
         playerHealth.OnChangeHealth += OnChangeHealth;
@@ -16,7 +16,6 @@ public class HealEffect : MonoBehaviour
 
     private void OnChangeHealth(int health, int? lastHealth = null)
     {
-        Debug.Log($"Health changed: {health} (last: {lastHealth})");
         if (lastHealth == null || health <= lastHealth)
             return;
 

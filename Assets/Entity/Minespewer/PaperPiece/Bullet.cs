@@ -16,7 +16,6 @@ public class Bullet : MonoBehaviour
     [HideInInspector] public Entity sender;
 
     private readonly String GROUND_TAG = "Ground";
-    private readonly String ENTITY_TAG = "Entity";
 
     private bool isExploded = false;
 
@@ -58,7 +57,6 @@ public class Bullet : MonoBehaviour
             hitHealth.Add(hp);
         }
 
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == GROUND_TAG)
             AddGroundExplosion();
         else

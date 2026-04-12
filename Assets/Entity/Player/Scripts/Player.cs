@@ -1,11 +1,12 @@
 using UnityEngine;
 
 
-public class Player : Entity
+public class Player : Minespewer
 {
+    public static Player shared { get; private set; }
 
-    protected override void OnStart()
+    void Awake()
     {
-
+        shared = this;
     }
 }

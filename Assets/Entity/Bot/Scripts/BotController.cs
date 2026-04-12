@@ -51,7 +51,7 @@ public class BotController : MonoBehaviour
             direction = agent.path.corners[1] - transform.position;
         movement.Move(direction);
 
-        if (!targetManager.target)
+        if (targetManager.target == null)
             return;
 
         if (Time.time - timeLastUpdate < delay)

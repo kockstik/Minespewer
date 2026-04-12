@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BotTargetManager
   delay: 3
-  target: {fileID: 0}
 --- !u!1001 &2811053550236431420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,6 +422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec0be3d5bd8aac42a0441c60ae99e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bot
+  deathExplosionPrefab: {fileID: 2587419911129840480, guid: eb5a0a156c3299742b567c3e4a5c053c, type: 3}
+  corpsePrefab: {fileID: 6471637958653447970, guid: aa4ccd1e0a0117e4a9ae5bfdecf2226e, type: 3}
   level: 1
   score: 100
   scoreToNextLvl: 0
