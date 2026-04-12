@@ -16,7 +16,7 @@ public class HealEffect : MonoBehaviour
 
     private void OnChangeHealth(int health, int? lastHealth = null)
     {
-        if (lastHealth == null || health <= lastHealth)
+        if (lastHealth == null || health <= lastHealth || particles == null)
             return;
 
         particles.Play();
