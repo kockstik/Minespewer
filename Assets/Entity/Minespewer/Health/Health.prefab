@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6889393073661391630}
   - component: {fileID: 6436503820199269434}
+  - component: {fileID: 4858198626376440059}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -172,6 +173,18 @@ MonoBehaviour:
   idleDelay: 4
   fadeOutDuration: 1
   fadeInDuration: 0.15
+--- !u!114 &4858198626376440059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3249811832746627374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7195c734ea35c3e4dbbd1ba8725d529d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fade
 --- !u!1 &7609996478011927172
 GameObject:
   m_ObjectHideFlags: 0
