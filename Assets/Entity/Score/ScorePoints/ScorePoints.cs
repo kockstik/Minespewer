@@ -22,6 +22,7 @@ public class ScorePoints : MonoBehaviour
         {
             tmp = Instantiate(point);
             tmp.SetActive(false);
+            tmp.transform.parent = transform;
             points.Add(new PointData { obj = tmp, target = Vector3.zero });
         }
     }
