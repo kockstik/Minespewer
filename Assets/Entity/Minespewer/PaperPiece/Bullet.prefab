@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 503720152782546900}
   - component: {fileID: 6357733382317823177}
   - component: {fileID: 9201917656806960895}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   groundExplosion: {fileID: 4468599994060382966, guid: 186ba5a61a671e340bb9142919486704, type: 3}
-  airExplosion: {fileID: 4468599994060382966, guid: 186ba5a61a671e340bb9142919486704, type: 3}
-  entityExplosion: {fileID: 4468599994060382966, guid: 186ba5a61a671e340bb9142919486704, type: 3}
+  airExplosion: {fileID: 4970676283312152395, guid: 667bb885197973044bfcf5fa1a3a58eb, type: 3}
+  entityExplosion: {fileID: 4970676283312152395, guid: 667bb885197973044bfcf5fa1a3a58eb, type: 3}
   shadow: {fileID: 7853071764406631662}
   lifetime: 8
   explosionRadius: 2
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7013913618548666810}
   - component: {fileID: 2606755423450242016}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ForceField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,9 +626,9 @@ GameObject:
   - component: {fileID: 7290605340350393994}
   - component: {fileID: 4681111392932462368}
   - component: {fileID: 3427714205056439918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -735,7 +735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5097694530803177717}
   - component: {fileID: 2952598545706231204}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,6 +783,10 @@ PrefabInstance:
     - target: {fileID: 386978620045566743, guid: d80d55951e28f9943a383d086dbca165, type: 3}
       propertyPath: m_Name
       value: Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 386978620045566743, guid: d80d55951e28f9943a383d086dbca165, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8804303472649862542, guid: d80d55951e28f9943a383d086dbca165, type: 3}
       propertyPath: m_Enabled
@@ -920,7 +924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6d7a2c476d9fac14a8e65070048e197e, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

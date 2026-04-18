@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,7 +6,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private GameObject groundExplosion;
-    [SerializeField] private GameObject airExplosion;
     [SerializeField] private GameObject entityExplosion;
     [SerializeField] private Transform shadow;
     [SerializeField] private float lifetime = 8f;
@@ -14,6 +14,8 @@ public class Bullet : MonoBehaviour
 
     [HideInInspector] public int damage = 1;
     [HideInInspector] public Entity sender;
+
+    private readonly String GROUND_TAG = "Ground";
 
     private bool isExploded = false;
 
@@ -55,15 +57,23 @@ public class Bullet : MonoBehaviour
             hitHealth.Add(hp);
         }
 
-        AddExplosion(groundExplosion);
+        if (collision.gameObject.tag == GROUND_TAG)
+            AddGroundExplosion();
+        else
+            AddEntityExplosion(collision.contacts[0].normal);
 
         Destroy();
     }
 
-    private void AddExplosion(GameObject explosionPrefab)
+    private void AddGroundExplosion()
     {
         var pos = new Vector3(transform.position.x, 0.1f, transform.position.z);
-        Instantiate(explosionPrefab, pos, Quaternion.identity);
+        Instantiate(groundExplosion, pos, Quaternion.identity);
+    }
+
+    private void AddEntityExplosion(Vector3 direction)
+    {
+        Instantiate(entityExplosion, transform.position, Quaternion.LookRotation(direction));
     }
 
     private void Destroy()

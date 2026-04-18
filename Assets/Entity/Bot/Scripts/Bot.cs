@@ -1,10 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(BotController))]
-public class Bot : Entity
+public class Bot : Minespewer
 {
-    protected override void OnStart()
-    {
 
-    }
 }

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Bullet
+  - Entity
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - EntityCollider
   - Trigger
   - SightTarget
-  - 
-  - 
-  - 
+  - RenderOwerDefault
+  - Bullet
+  - Explosion
   - 
   - 
   - 

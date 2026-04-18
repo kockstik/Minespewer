@@ -51,15 +51,22 @@ public class BotController : MonoBehaviour
             direction = agent.path.corners[1] - transform.position;
         movement.Move(direction);
 
-        if (!targetManager.target)
-            return;
-
         if (Time.time - timeLastUpdate < delay)
             return;
+
+        Transform target;
+        if (targetManager.target != null)
+            target = targetManager.target?.transform;
+        else
+            target = Player.shared?.transform;
+
+        if (target == null)
+            return;
+
         timeLastUpdate = Time.time;
 
         var randomInCircle = UnityEngine.Random.insideUnitCircle.normalized * 25;
-        var position = targetManager.target.transform.position + new Vector3(randomInCircle.x, 0, randomInCircle.y);
+        var position = target.transform.position + new Vector3(randomInCircle.x, 0, randomInCircle.y);
 
         agent.SetDestination(position);
     }

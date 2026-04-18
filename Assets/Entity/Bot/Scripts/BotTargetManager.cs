@@ -58,7 +58,7 @@ public class BotTargetManager : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         var enemy = other.GetComponentInParent<Entity>();
-        if (!enemy)
+        if (enemy == null)
             return;
 
         if (enemys.Contains(enemy))
@@ -73,7 +73,7 @@ public class BotTargetManager : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         var enemy = other.GetComponentInParent<Entity>();
-        if (!enemy)
+        if (enemy == null)
             return;
 
         if (!enemys.Contains(enemy))
