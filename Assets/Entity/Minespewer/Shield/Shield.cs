@@ -47,9 +47,9 @@ public class Shield : MonoBehaviour
         maxHealth = health;
     }
 
-    private void OnDamage(Bullet bullet)
+    private void OnDamage(IDamager damager)
     {
-        shield.transform.LookAt(bullet.transform);
+        shield.transform.LookAt(damager.transform);
         time = 0;
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IDamager
 {
     [SerializeField] private GameObject groundExplosion;
     [SerializeField] private GameObject entityExplosion;
@@ -12,8 +12,9 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float explosionRadius = 2f;
     [SerializeField] private LayerMask damageMask;
 
-    [HideInInspector] public int damage = 1;
-    [HideInInspector] public Entity sender;
+    [HideInInspector]
+    public int damage { get; private set; } = 1;
+    [HideInInspector] public Entity sender { get; set; }
 
     private readonly String GROUND_TAG = "Ground";
 

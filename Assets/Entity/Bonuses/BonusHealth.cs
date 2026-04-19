@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BonusHealth : Health
 {
-    public override void SetDamage(Bullet bullet)
+    public override void SetDamage(IDamager damager)
     {
-        OnDie(bullet.sender);
+        OnDie(damager.sender);
     }
 }

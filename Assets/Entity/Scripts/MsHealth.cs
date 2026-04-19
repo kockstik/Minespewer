@@ -15,7 +15,7 @@ public class MsHealth : Health
     private float timeLastHeal = 0;
 
     public OnChangeHealth_EventHalder OnChangeMaxHealth;
-    public delegate void OnDamage_EventHalder(Bullet bullet);
+    public delegate void OnDamage_EventHalder(IDamager damager);
     public OnDamage_EventHalder OnDamage;
 
     protected override void OnStart()
@@ -40,19 +40,19 @@ public class MsHealth : Health
         health = Mathf.Clamp(health + 1, 0, maxHealth);
     }
 
-    public override void SetDamage(Bullet bullet)
+    public override void SetDamage(IDamager damager)
     {
-        if (OnDamage != null) OnDamage(bullet);
+        if (OnDamage != null) OnDamage(damager);
 
-        var impulseVelocity = (transform.position - bullet.transform.position).normalized * impulseOnDamage;
+        var impulseVelocity = (transform.position - damager.transform.position).normalized * impulseOnDamage;
         impulseVelocity.y = 0;
         entityRb.AddForce(impulseVelocity, ForceMode.Impulse);
 
         timeLastGetDamage = Time.time;
-        health -= bullet.damage;
+        health -= damager.damage;
 
         if (health <= 0)
-            OnDie(bullet.sender);
+            OnDie(damager.sender);
     }
 
     public void SetMaxHealth(int value)

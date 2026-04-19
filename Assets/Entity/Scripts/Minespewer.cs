@@ -31,7 +31,8 @@ public abstract class Minespewer : Entity
 
     public override void OnDie(Entity killer)
     {
-        Instantiate(deathExplosionPrefab, transform.position, Quaternion.identity);
+        var damager = Instantiate(deathExplosionPrefab, transform.position, Quaternion.identity).GetComponentInChildren<DarkHoleDamager>();
+        damager.sender = killer;
         Instantiate(corpsePrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

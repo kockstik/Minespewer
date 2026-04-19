@@ -20,8 +20,8 @@ public abstract class Health : MonoBehaviour
         }
     }
 
-    public abstract void SetDamage(Bullet bullet);
-    protected virtual void OnDie(Entity killer)
+    public abstract void SetDamage(IDamager damager);
+    protected virtual void OnDie(Entity? killer = null)
     {
         killer.OnKill(entity);
         entity.OnDie(killer);
