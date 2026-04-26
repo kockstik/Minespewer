@@ -20,9 +20,9 @@ TagManager:
   - RenderOwerDefault
   - Bullet
   - Explosion
-  - 
-  - 
-  - 
+  - MortarForceField
+  - BonusForceField
+  - HoleForceField
   - 
   - 
   - 
