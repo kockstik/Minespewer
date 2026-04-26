@@ -46,7 +46,10 @@ public class ScorePoints : MonoBehaviour
     void FixedUpdate()
     {
         if (entity == null)
+        {
+            TryDisable();
             return;
+        }
 
         if (Time.time - startTime >= lifetime)
         {
@@ -82,8 +85,24 @@ public class ScorePoints : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    private void TryDisable()
+    {
+        if (gameObject.activeInHierarchy)
+        {
+            OnDisable();
+            gameObject.SetActive(false);
+        }
+    }
+
     void OnDisable()
     {
+        foreach (var kvp in points)
+        {
+            if (!kvp.obj.activeInHierarchy)
+                continue;
+            var obj = kvp.obj;
+            obj.SetActive(false);
+        }
         entity = null;
     }
 }
