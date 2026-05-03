@@ -22,7 +22,7 @@ TagManager:
   - Explosion
   - MortarForceField
   - BonusForceField
-  - HoleForceField
+  - GravityForceField
   - 
   - 
   - 
