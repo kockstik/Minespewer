@@ -58,12 +58,10 @@ public class BotTargetManager : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         var enemy = other.GetComponentInParent<Entity>();
-        if (enemy == null)
+        if (enemy == null || enemys.Contains(enemy))
             return;
 
-        if (enemys.Contains(enemy))
-            return;
-
+        enemy.Destroyed += OnTargetDie;
         enemys.Add(enemy);
 
         if (enemys.Count == 1)
@@ -79,6 +77,14 @@ public class BotTargetManager : MonoBehaviour
         if (!enemys.Contains(enemy))
             return;
 
+        enemy.Destroyed -= OnTargetDie;
         enemys.Remove(enemy);
+    }
+
+    void OnTargetDie(Entity entity)
+    {
+        entity.Destroyed -= OnTargetDie;
+        if (enemys.Contains(entity))
+            enemys.Remove(entity);
     }
 }
