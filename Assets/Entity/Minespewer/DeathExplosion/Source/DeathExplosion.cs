@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeathExplosion : MonoBehaviour
 {
-    [SerializeField] private float forceImpulse = 100f;
+    [SerializeField] private float forceImpulse = 1000f;
     private float radius = 0;
 
     void Start()
