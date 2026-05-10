@@ -38,7 +38,6 @@ public class SpawnPoint : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"SpawnPoint: {entityes.Count} entities, {toSpawn.Count} in queue");
         if (Time.time - lastCheckup > checkupDelay && entityes.Count == 1)
         {
             lastCheckup = Time.time;

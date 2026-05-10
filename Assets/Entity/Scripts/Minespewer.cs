@@ -5,6 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 [RequireComponent(typeof(MsHealth))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Accounting))]
+[RequireComponent(typeof(HidingAreaSetter))]
 public abstract class Minespewer : Entity
 {
     [SerializeField] private DeathExplosion deathExplosionPrefab;
