@@ -15,14 +15,11 @@ public class Accounting : MonoBehaviour
     [SerializeField] private float delay = 0.3f;
     private float lastAccuredTime = 0;
 
-    private MsHealth health;
-
     public delegate void OnChangeScore_EventHalder(int score, int maxScore);
     public OnChangeScore_EventHalder OnChangeScore;
 
     void Start()
     {
-        health = GetComponent<MsHealth>();
         score = 0;
         scoreToNextLvl = level * level * upLvlMultipler;
         if (OnChangeScore != null) OnChangeScore(score, scoreToNextLvl);
@@ -44,7 +41,6 @@ public class Accounting : MonoBehaviour
         {
             level++;
             coins += level / 2 + 1;
-            health.SetMaxHealth(level);
             score -= scoreToNextLvl;
             scoreToNextLvl = level * level * upLvlMultipler;
         }
