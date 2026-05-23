@@ -8,7 +8,7 @@ public class Accounting : MonoBehaviour
     [HideInInspector] public int scoreToNextLvl = 0;
     private readonly int upLvlMultipler = 100;
 
-    [HideInInspector] public int points = 0;
+    [HideInInspector] public int coins = 0;
 
     private int additiveScore = 0;
     private int fraction = 10;
@@ -43,7 +43,7 @@ public class Accounting : MonoBehaviour
         while (score >= scoreToNextLvl)
         {
             level++;
-            points++;
+            coins += level / 2 + 1;
             health.SetMaxHealth(level);
             score -= scoreToNextLvl;
             scoreToNextLvl = level * level * upLvlMultipler;
