@@ -1,1 +1,1 @@
-<img width="800" height="450" alt="Video Project 4" src="https://github.com/user-attachments/assets/e45a66e4-708b-4719-ad78-53e29afe2627" />
+<img width="400" height="225" alt="Video Project 4" src="https://github.com/user-attachments/assets/e45a66e4-708b-4719-ad78-53e29afe2627" />
