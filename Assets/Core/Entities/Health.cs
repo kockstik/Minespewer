@@ -34,4 +34,8 @@ public abstract class Health : MonoBehaviour
     }
 
     protected virtual void OnStart() { }
+    public void AddMaxHealth(int amount)
+    {
+        health += amount;
+    }
 }
